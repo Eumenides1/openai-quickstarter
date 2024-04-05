@@ -10,4 +10,4 @@ llm = OpenAI(
     openai_api_key=api_key,
     openai_api_base=api_base,
 )
-print(llm.predict("我要做一个应用，叫起名大师，给这个应用起一个英文名字吧"))
+print(llm.predict("我要做一个应用，用来解释代码，给这个应用起一个英文名字吧"))
