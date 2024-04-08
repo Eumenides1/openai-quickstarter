@@ -1,6 +1,7 @@
 import os
 
 from langchain import OpenAI
+from langchain.callbacks import get_openai_callback
 
 api_base = os.getenv("OPENAI_API_BASE")
 api_key = os.getenv("MY_API_KEY")
@@ -14,5 +15,8 @@ llm = OpenAI(
     max_tokens=512,
 )
 
-for chunk in llm.stream("写一首关于秋天的诗歌"):
-    print(chunk, end="", flush=False)
+
+with get_openai_callback() as cb:
+    result = llm.invoke("给我讲一个笑话")
+    print(result)
+    print(cb)

@@ -15,4 +15,4 @@ llm = OpenAI(
 )
 
 for chunk in llm.stream("写一首关于秋天的诗歌"):
-    print(chunk, end="", flush=False)
+    print(chunk,end="\n",flush=False)
